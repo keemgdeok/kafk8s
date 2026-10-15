@@ -1,0 +1,38 @@
+[kafka-admin-client-thread | kafk8s-inspector] ERROR org.apache.kafka.clients.NetworkClient - [AdminClient clientId=kafk8s-inspector] Connection to node -1 (/10.244.3.4:9093) failed authentication due to: SSL handshake failed
+[kafka-admin-client-thread | kafk8s-inspector] WARN org.apache.kafka.clients.admin.internals.AdminMetadataManager - [AdminClient clientId=kafk8s-inspector] Fatal error during metadata update
+org.apache.kafka.common.errors.SslAuthenticationException: SSL handshake failed
+Caused by: javax.net.ssl.SSLHandshakeException: (certificate_unknown) No subject alternative names matching IP address 10.244.3.4 found
+	at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:130)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:383)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:326)
+	at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:321)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1287)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.onConsumeCertificate(CertificateMessage.java:1164)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.consume(CertificateMessage.java:1107)
+	at java.base/sun.security.ssl.SSLHandshake.consume(SSLHandshake.java:393)
+	at java.base/sun.security.ssl.HandshakeContext.dispatch(HandshakeContext.java:477)
+	at java.base/sun.security.ssl.SSLEngineImpl$DelegatedTask$DelegatedAction.run(SSLEngineImpl.java:1274)
+	at java.base/sun.security.ssl.SSLEngineImpl$DelegatedTask$DelegatedAction.run(SSLEngineImpl.java:1261)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+	at java.base/sun.security.ssl.SSLEngineImpl$DelegatedTask.run(SSLEngineImpl.java:1206)
+	at org.apache.kafka.common.network.SslTransportLayer.runDelegatedTasks(SslTransportLayer.java:444)
+	at org.apache.kafka.common.network.SslTransportLayer.handshakeUnwrap(SslTransportLayer.java:533)
+	at org.apache.kafka.common.network.SslTransportLayer.doHandshake(SslTransportLayer.java:382)
+	at org.apache.kafka.common.network.SslTransportLayer.handshake(SslTransportLayer.java:302)
+	at org.apache.kafka.common.network.KafkaChannel.prepare(KafkaChannel.java:178)
+	at org.apache.kafka.common.network.Selector.pollSelectionKeys(Selector.java:548)
+	at org.apache.kafka.common.network.Selector.poll(Selector.java:486)
+	at org.apache.kafka.clients.NetworkClient.poll(NetworkClient.java:645)
+	at org.apache.kafka.clients.admin.KafkaAdminClient$AdminClientRunnable.processRequests(KafkaAdminClient.java:1541)
+	at org.apache.kafka.clients.admin.KafkaAdminClient$AdminClientRunnable.run(KafkaAdminClient.java:1472)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.security.cert.CertificateException: No subject alternative names matching IP address 10.244.3.4 found
+	at java.base/sun.security.util.HostnameChecker.matchIP(HostnameChecker.java:160)
+	at java.base/sun.security.util.HostnameChecker.match(HostnameChecker.java:101)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkIdentity(X509TrustManagerImpl.java:466)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkIdentity(X509TrustManagerImpl.java:432)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:291)
+	at java.base/sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:144)
+	at java.base/sun.security.ssl.CertificateMessage$T13CertificateConsumer.checkServerCerts(CertificateMessage.java:1265)
+	... 19 more
+command terminated with exit code 2

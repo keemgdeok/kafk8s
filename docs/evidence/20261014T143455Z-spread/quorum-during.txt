@@ -1,0 +1,8 @@
+ClusterId:              AdlaAIi4SOeoTuDIREapow
+LeaderId:               2
+LeaderEpoch:            17
+HighWatermark:          1089
+MaxFollowerLag:         0
+MaxFollowerLagTimeMs:   170
+CurrentVoters:          [{"id": 0, "endpoints": ["CONTROLPLANE-9090://demo-controllers-0.demo-kafka-brokers.kafk8s-lab.svc:9090"]}, {"id": 1, "endpoints": ["CONTROLPLANE-9090://demo-controllers-1.demo-kafka-brokers.kafk8s-lab.svc:9090"]}, {"id": 2, "endpoints": ["CONTROLPLANE-9090://demo-controllers-2.demo-kafka-brokers.kafk8s-lab.svc:9090"]}]
+CurrentObservers:       [{"id": 7, "directoryId": "UmBv4CQjOy4Tp-dW8BgtYw"}, {"id": 11, "directoryId": "uq1yD0K25ux5TfezRTM3tA"}]

@@ -1,0 +1,2180 @@
+{
+  "phases": [
+    {
+      "phase": "after",
+      "acked": 113,
+      "errors": 5,
+      "error_types": [
+        "TimeoutException"
+      ]
+    },
+    {
+      "phase": "before",
+      "acked": 66,
+      "errors": 0,
+      "error_types": []
+    },
+    {
+      "phase": "during",
+      "acked": 0,
+      "errors": 14,
+      "error_types": [
+        "TimeoutException"
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "at": "2026-10-14T14:42:04.755040718Z",
+      "event": "SUMMARY",
+      "observed": 181,
+      "acked": 179,
+      "consumer_failed": false,
+      "unacknowledged_but_observed": [
+        "20261014T143858Z-colocated:67",
+        "20261014T143858Z-colocated:66"
+      ],
+      "send_errors": 19,
+      "acked_not_observed_within_window": [],
+      "run": "20261014T143858Z-colocated"
+    }
+  ],
+  "metadata": [
+    {
+      "at": "2026-10-14T14:39:00.576305074Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:05.934486519Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:11.200347789Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:16.393362876Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:21.664725940Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:26.847541401Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:32.049297949Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:39.714937094Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:48.732814086Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:39:57.752512079Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:40:06.776956697Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:40:15.793712022Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:40:24.806943388Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:40:33.820784129Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:40:42.834411912Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:40:51.872485700Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            11
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:00.894121235Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:06.084337364Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:11.304173916Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:16.678633546Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:21.910915544Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:27.106694695Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:32.287859923Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:37.449709228Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:42.641444336Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:47.814825020Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:52.989808414Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    },
+    {
+      "at": "2026-10-14T14:41:58.165277015Z",
+      "event": "METADATA",
+      "cluster_id": "AdlaAIi4SOeoTuDIREapow",
+      "topic": "lab-events",
+      "min_isr": "2",
+      "min_isr_source": "DYNAMIC_TOPIC_CONFIG",
+      "partitions": [
+        {
+          "replicas": [
+            7,
+            11,
+            3
+          ],
+          "partition": 0,
+          "leader": 7,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            11,
+            3,
+            7
+          ],
+          "partition": 1,
+          "leader": 11,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        },
+        {
+          "replicas": [
+            3,
+            7,
+            11
+          ],
+          "partition": 2,
+          "leader": 3,
+          "isr": [
+            3,
+            11,
+            7
+          ]
+        }
+      ],
+      "finalized_features": {
+        "group.version": {
+          "max": 1,
+          "min": 1
+        },
+        "streams.version": {
+          "max": 1,
+          "min": 1
+        },
+        "transaction.version": {
+          "max": 2,
+          "min": 2
+        },
+        "eligible.leader.replicas.version": {
+          "max": 1,
+          "min": 1
+        },
+        "share.version": {
+          "max": 1,
+          "min": 1
+        },
+        "metadata.version": {
+          "max": 30,
+          "min": 30
+        }
+      }
+    }
+  ]
+}

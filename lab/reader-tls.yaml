@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lab-reader-tls
+  namespace: kafk8s-lab
+  labels: {app: kafk8s-lab-reader}
+spec:
+  serviceAccountName: kafk8s-reader
+  automountServiceAccountToken: true
+  nodeSelector: {kubernetes.io/hostname: kafk8s-lab-worker4}
+  volumes:
+    - name: tls
+      secret: {secretName: kafk8s-client-tls}
+    - name: properties
+      configMap: {name: kafk8s-client-properties}
+  containers:
+    - name: reader
+      image: eclipse-temurin:21-jdk@sha256:f9bf7e9fe2f9bc4657537c1a7e20c768f0c3bafca41598263be4714783dd62eb
+      command: [sleep, infinity]
+      env: [{name: JAVA_OPTS, value: '-XX:ActiveProcessorCount=2 -Xmx192m'}]
+      resources:
+        requests: {cpu: 50m, memory: 128Mi}
+        limits: {memory: 512Mi}
+      volumeMounts:
+        - {name: tls, mountPath: /tls, readOnly: true}
+        - {name: properties, mountPath: /config, readOnly: true}

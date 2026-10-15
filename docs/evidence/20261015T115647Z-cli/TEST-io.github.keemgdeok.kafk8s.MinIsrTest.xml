@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.github.keemgdeok.kafk8s.MinIsrTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-15T11:56:29.043Z" hostname="a9a965ee7f24" time="0.027">
+  <properties/>
+  <testcase name="deniedBrokerConfigIsUnknown()" classname="io.github.keemgdeok.kafk8s.MinIsrTest" time="0.007"/>
+  <testcase name="invalidValuesCannotProducePass()" classname="io.github.keemgdeok.kafk8s.MinIsrTest" time="0.004"/>
+  <testcase name="inheritedDefaultsMustAgree()" classname="io.github.keemgdeok.kafk8s.MinIsrTest" time="0.002"/>
+  <testcase name="divergentBrokerDefaultsCannotProducePass()" classname="io.github.keemgdeok.kafk8s.MinIsrTest" time="0.003"/>
+  <testcase name="explicitTopicValueDoesNotNeedBrokerConfigPermission()" classname="io.github.keemgdeok.kafk8s.MinIsrTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

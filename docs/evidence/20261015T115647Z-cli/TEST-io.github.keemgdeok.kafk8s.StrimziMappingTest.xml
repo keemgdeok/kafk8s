@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.github.keemgdeok.kafk8s.StrimziMappingTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2026-10-15T11:56:29.072Z" hostname="a9a965ee7f24" time="0.111">
+  <properties/>
+  <testcase name="unassignedPodIsIncomplete()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.01"/>
+  <testcase name="wrongClusterIdIsNotAValidMapping()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.008"/>
+  <testcase name="unsupportedOperatorIsExplicit()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.007"/>
+  <testcase name="nonContiguousIdsAndControllersAreMappedCorrectly()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.007"/>
+  <testcase name="conflictingBrokerIdIsRejected()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.008"/>
+  <testcase name="missingPodCannotBeInventedFromName()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.009"/>
+  <testcase name="missingPodSetChainIsRejected()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.01"/>
+  <testcase name="notReadyIsNotTheSameAsNotInIsr()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.007"/>
+  <testcase name="wrongOwnerUidInvalidatesOnlyThatMapping()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.023"/>
+  <testcase name="stalePoolGenerationDoesNotBecomeHealthy()" classname="io.github.keemgdeok.kafk8s.StrimziMappingTest" time="0.008"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

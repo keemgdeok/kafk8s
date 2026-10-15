@@ -1,0 +1,8 @@
+{
+  "layout": "spread",
+  "target": "kafk8s-lab-worker",
+  "stopped_at": "2026-10-14T14:35:30Z",
+  "restarted_at": "2026-10-14T14:36:36Z",
+  "kind_cluster": "kafk8s-lab",
+  "fault": "abrupt worker container stop; not pod deletion"
+}

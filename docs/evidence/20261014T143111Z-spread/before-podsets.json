@@ -1,0 +1,1549 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "core.strimzi.io/v1",
+            "kind": "StrimziPodSet",
+            "metadata": {
+                "annotations": {
+                    "strimzi.io/kafka-version": "4.3.1",
+                    "strimzi.io/storage": "{\"type\":\"jbod\",\"volumes\":[{\"id\":0,\"type\":\"ephemeral\",\"kraftMetadata\":\"shared\"}]}"
+                },
+                "creationTimestamp": "2026-10-14T14:19:25Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/instance": "demo",
+                    "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                    "app.kubernetes.io/name": "kafka",
+                    "app.kubernetes.io/part-of": "strimzi-demo",
+                    "strimzi.io/cluster": "demo",
+                    "strimzi.io/component-type": "kafka",
+                    "strimzi.io/kind": "Kafka",
+                    "strimzi.io/name": "demo-kafka",
+                    "strimzi.io/pool-name": "b11"
+                },
+                "name": "demo-b11",
+                "namespace": "kafk8s-lab",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "kafka.strimzi.io/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": false,
+                        "kind": "KafkaNodePool",
+                        "name": "b11",
+                        "uid": "a0adac14-2040-420e-b6c7-0f2adec5a75c"
+                    }
+                ],
+                "resourceVersion": "2426",
+                "uid": "69869a38-6cd6-456b-b722-6597cfed98d5"
+            },
+            "spec": {
+                "pods": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "metadata": {
+                            "annotations": {
+                                "strimzi.io/clients-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-key-generation": "0",
+                                "strimzi.io/configuration-hash": "6b773bf8",
+                                "strimzi.io/kafka-version": "4.3.1",
+                                "strimzi.io/resource-revision": "4546f0c2",
+                                "strimzi.io/revision": "0efb2a19",
+                                "strimzi.io/server-cert-hash": "9cef19d86259b7177b59fca0280e651409d0de79"
+                            },
+                            "labels": {
+                                "app.kubernetes.io/instance": "demo",
+                                "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                                "app.kubernetes.io/name": "kafka",
+                                "app.kubernetes.io/part-of": "strimzi-demo",
+                                "strimzi.io/broker-role": "true",
+                                "strimzi.io/cluster": "demo",
+                                "strimzi.io/component-type": "kafka",
+                                "strimzi.io/controller": "strimzipodset",
+                                "strimzi.io/controller-name": "demo-b11",
+                                "strimzi.io/controller-role": "false",
+                                "strimzi.io/kind": "Kafka",
+                                "strimzi.io/name": "demo-kafka",
+                                "strimzi.io/pod-name": "demo-b11-11",
+                                "strimzi.io/pool-name": "b11"
+                            },
+                            "name": "demo-b11-11",
+                            "namespace": "kafk8s-lab"
+                        },
+                        "spec": {
+                            "affinity": {
+                                "nodeAffinity": {
+                                    "requiredDuringSchedulingIgnoredDuringExecution": {
+                                        "nodeSelectorTerms": [
+                                            {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "kubernetes.io/hostname",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "kafk8s-lab-worker3"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "automountServiceAccountToken": false,
+                            "containers": [
+                                {
+                                    "args": [
+                                        "/opt/kafka/kafka_run.sh"
+                                    ],
+                                    "env": [
+                                        {
+                                            "name": "KAFKA_JMX_EXPORTER_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "STRIMZI_KAFKA_GC_LOG_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "KAFKA_CLUSTER_NAME",
+                                            "value": "demo"
+                                        },
+                                        {
+                                            "name": "KAFKA_HEAP_OPTS",
+                                            "value": "-Xms256m -Xmx256m"
+                                        }
+                                    ],
+                                    "image": "quay.io/strimzi/kafka:1.3.0-kafka-4.3.1",
+                                    "imagePullPolicy": "IfNotPresent",
+                                    "livenessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_liveness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "name": "kafka",
+                                    "ports": [
+                                        {
+                                            "containerPort": 8443,
+                                            "name": "tcp-kafkaagent",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9091,
+                                            "name": "tcp-replication",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9092,
+                                            "name": "tcp-clients",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9093,
+                                            "name": "tcp-clientstls",
+                                            "protocol": "TCP"
+                                        }
+                                    ],
+                                    "readinessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_readiness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "resources": {
+                                        "limits": {
+                                            "memory": "640Mi"
+                                        },
+                                        "requests": {
+                                            "cpu": "100m",
+                                            "memory": "384Mi"
+                                        }
+                                    },
+                                    "volumeMounts": [
+                                        {
+                                            "mountPath": "/var/lib/kafka/data-0",
+                                            "name": "data-0"
+                                        },
+                                        {
+                                            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                            "name": "kube-api-access",
+                                            "readOnly": true
+                                        },
+                                        {
+                                            "mountPath": "/tmp",
+                                            "name": "strimzi-tmp"
+                                        },
+                                        {
+                                            "mountPath": "/opt/kafka/custom-config/",
+                                            "name": "kafka-metrics-and-logging"
+                                        },
+                                        {
+                                            "mountPath": "/var/opt/kafka",
+                                            "name": "ready-files"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "hostname": "demo-b11-11",
+                            "restartPolicy": "Always",
+                            "schedulerName": "default-scheduler",
+                            "serviceAccountName": "demo-kafka",
+                            "subdomain": "demo-kafka-brokers",
+                            "terminationGracePeriodSeconds": 30,
+                            "volumes": [
+                                {
+                                    "emptyDir": {},
+                                    "name": "data-0"
+                                },
+                                {
+                                    "name": "kube-api-access",
+                                    "projected": {
+                                        "defaultMode": 420,
+                                        "sources": [
+                                            {
+                                                "serviceAccountToken": {
+                                                    "path": "token"
+                                                }
+                                            },
+                                            {
+                                                "configMap": {
+                                                    "items": [
+                                                        {
+                                                            "key": "ca.crt",
+                                                            "path": "ca.crt"
+                                                        }
+                                                    ],
+                                                    "name": "kube-root-ca.crt"
+                                                }
+                                            },
+                                            {
+                                                "downwardAPI": {
+                                                    "items": [
+                                                        {
+                                                            "fieldRef": {
+                                                                "apiVersion": "v1",
+                                                                "fieldPath": "metadata.namespace"
+                                                            },
+                                                            "path": "namespace"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "5Mi"
+                                    },
+                                    "name": "strimzi-tmp"
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "demo-b11-11"
+                                    },
+                                    "name": "kafka-metrics-and-logging"
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "1Ki"
+                                    },
+                                    "name": "ready-files"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "selector": {
+                    "matchLabels": {
+                        "strimzi.io/cluster": "demo",
+                        "strimzi.io/kind": "Kafka",
+                        "strimzi.io/name": "demo-kafka",
+                        "strimzi.io/pool-name": "b11"
+                    }
+                }
+            },
+            "status": {
+                "currentPods": 1,
+                "observedGeneration": 1,
+                "pods": 1,
+                "readyPods": 1
+            }
+        },
+        {
+            "apiVersion": "core.strimzi.io/v1",
+            "kind": "StrimziPodSet",
+            "metadata": {
+                "annotations": {
+                    "strimzi.io/kafka-version": "4.3.1",
+                    "strimzi.io/storage": "{\"type\":\"jbod\",\"volumes\":[{\"id\":0,\"type\":\"ephemeral\",\"kraftMetadata\":\"shared\"}]}"
+                },
+                "creationTimestamp": "2026-10-14T14:19:25Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/instance": "demo",
+                    "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                    "app.kubernetes.io/name": "kafka",
+                    "app.kubernetes.io/part-of": "strimzi-demo",
+                    "strimzi.io/cluster": "demo",
+                    "strimzi.io/component-type": "kafka",
+                    "strimzi.io/kind": "Kafka",
+                    "strimzi.io/name": "demo-kafka",
+                    "strimzi.io/pool-name": "b3"
+                },
+                "name": "demo-b3",
+                "namespace": "kafk8s-lab",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "kafka.strimzi.io/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": false,
+                        "kind": "KafkaNodePool",
+                        "name": "b3",
+                        "uid": "a6738850-8601-4555-8d56-61b3763bf97a"
+                    }
+                ],
+                "resourceVersion": "2890",
+                "uid": "9ee3206d-2b67-4847-bf27-87895bc4e674"
+            },
+            "spec": {
+                "pods": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "metadata": {
+                            "annotations": {
+                                "strimzi.io/clients-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-key-generation": "0",
+                                "strimzi.io/configuration-hash": "15efff58",
+                                "strimzi.io/kafka-version": "4.3.1",
+                                "strimzi.io/resource-revision": "4546f0c2",
+                                "strimzi.io/revision": "f0611929",
+                                "strimzi.io/server-cert-hash": "76211393433eda368145d151fa1af0d459429387"
+                            },
+                            "labels": {
+                                "app.kubernetes.io/instance": "demo",
+                                "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                                "app.kubernetes.io/name": "kafka",
+                                "app.kubernetes.io/part-of": "strimzi-demo",
+                                "strimzi.io/broker-role": "true",
+                                "strimzi.io/cluster": "demo",
+                                "strimzi.io/component-type": "kafka",
+                                "strimzi.io/controller": "strimzipodset",
+                                "strimzi.io/controller-name": "demo-b3",
+                                "strimzi.io/controller-role": "false",
+                                "strimzi.io/kind": "Kafka",
+                                "strimzi.io/name": "demo-kafka",
+                                "strimzi.io/pod-name": "demo-b3-3",
+                                "strimzi.io/pool-name": "b3"
+                            },
+                            "name": "demo-b3-3",
+                            "namespace": "kafk8s-lab"
+                        },
+                        "spec": {
+                            "affinity": {
+                                "nodeAffinity": {
+                                    "requiredDuringSchedulingIgnoredDuringExecution": {
+                                        "nodeSelectorTerms": [
+                                            {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "kubernetes.io/hostname",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "kafk8s-lab-worker"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "automountServiceAccountToken": false,
+                            "containers": [
+                                {
+                                    "args": [
+                                        "/opt/kafka/kafka_run.sh"
+                                    ],
+                                    "env": [
+                                        {
+                                            "name": "KAFKA_JMX_EXPORTER_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "STRIMZI_KAFKA_GC_LOG_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "KAFKA_CLUSTER_NAME",
+                                            "value": "demo"
+                                        },
+                                        {
+                                            "name": "KAFKA_HEAP_OPTS",
+                                            "value": "-Xms256m -Xmx256m"
+                                        }
+                                    ],
+                                    "image": "quay.io/strimzi/kafka:1.3.0-kafka-4.3.1",
+                                    "imagePullPolicy": "IfNotPresent",
+                                    "livenessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_liveness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "name": "kafka",
+                                    "ports": [
+                                        {
+                                            "containerPort": 8443,
+                                            "name": "tcp-kafkaagent",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9091,
+                                            "name": "tcp-replication",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9092,
+                                            "name": "tcp-clients",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9093,
+                                            "name": "tcp-clientstls",
+                                            "protocol": "TCP"
+                                        }
+                                    ],
+                                    "readinessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_readiness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "resources": {
+                                        "limits": {
+                                            "memory": "640Mi"
+                                        },
+                                        "requests": {
+                                            "cpu": "100m",
+                                            "memory": "384Mi"
+                                        }
+                                    },
+                                    "volumeMounts": [
+                                        {
+                                            "mountPath": "/var/lib/kafka/data-0",
+                                            "name": "data-0"
+                                        },
+                                        {
+                                            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                            "name": "kube-api-access",
+                                            "readOnly": true
+                                        },
+                                        {
+                                            "mountPath": "/tmp",
+                                            "name": "strimzi-tmp"
+                                        },
+                                        {
+                                            "mountPath": "/opt/kafka/custom-config/",
+                                            "name": "kafka-metrics-and-logging"
+                                        },
+                                        {
+                                            "mountPath": "/var/opt/kafka",
+                                            "name": "ready-files"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "hostname": "demo-b3-3",
+                            "restartPolicy": "Always",
+                            "schedulerName": "default-scheduler",
+                            "serviceAccountName": "demo-kafka",
+                            "subdomain": "demo-kafka-brokers",
+                            "terminationGracePeriodSeconds": 30,
+                            "volumes": [
+                                {
+                                    "emptyDir": {},
+                                    "name": "data-0"
+                                },
+                                {
+                                    "name": "kube-api-access",
+                                    "projected": {
+                                        "defaultMode": 420,
+                                        "sources": [
+                                            {
+                                                "serviceAccountToken": {
+                                                    "path": "token"
+                                                }
+                                            },
+                                            {
+                                                "configMap": {
+                                                    "items": [
+                                                        {
+                                                            "key": "ca.crt",
+                                                            "path": "ca.crt"
+                                                        }
+                                                    ],
+                                                    "name": "kube-root-ca.crt"
+                                                }
+                                            },
+                                            {
+                                                "downwardAPI": {
+                                                    "items": [
+                                                        {
+                                                            "fieldRef": {
+                                                                "apiVersion": "v1",
+                                                                "fieldPath": "metadata.namespace"
+                                                            },
+                                                            "path": "namespace"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "5Mi"
+                                    },
+                                    "name": "strimzi-tmp"
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "demo-b3-3"
+                                    },
+                                    "name": "kafka-metrics-and-logging"
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "1Ki"
+                                    },
+                                    "name": "ready-files"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "selector": {
+                    "matchLabels": {
+                        "strimzi.io/cluster": "demo",
+                        "strimzi.io/kind": "Kafka",
+                        "strimzi.io/name": "demo-kafka",
+                        "strimzi.io/pool-name": "b3"
+                    }
+                }
+            },
+            "status": {
+                "currentPods": 1,
+                "observedGeneration": 1,
+                "pods": 1,
+                "readyPods": 1
+            }
+        },
+        {
+            "apiVersion": "core.strimzi.io/v1",
+            "kind": "StrimziPodSet",
+            "metadata": {
+                "annotations": {
+                    "strimzi.io/kafka-version": "4.3.1",
+                    "strimzi.io/storage": "{\"type\":\"jbod\",\"volumes\":[{\"id\":0,\"type\":\"ephemeral\",\"kraftMetadata\":\"shared\"}]}"
+                },
+                "creationTimestamp": "2026-10-14T14:19:25Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/instance": "demo",
+                    "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                    "app.kubernetes.io/name": "kafka",
+                    "app.kubernetes.io/part-of": "strimzi-demo",
+                    "strimzi.io/cluster": "demo",
+                    "strimzi.io/component-type": "kafka",
+                    "strimzi.io/kind": "Kafka",
+                    "strimzi.io/name": "demo-kafka",
+                    "strimzi.io/pool-name": "b7"
+                },
+                "name": "demo-b7",
+                "namespace": "kafk8s-lab",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "kafka.strimzi.io/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": false,
+                        "kind": "KafkaNodePool",
+                        "name": "b7",
+                        "uid": "323296a9-c30a-4ca0-b746-217b7db158f4"
+                    }
+                ],
+                "resourceVersion": "2472",
+                "uid": "3eee6a57-60ab-4031-a479-d539d166102c"
+            },
+            "spec": {
+                "pods": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "metadata": {
+                            "annotations": {
+                                "strimzi.io/clients-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-key-generation": "0",
+                                "strimzi.io/configuration-hash": "b8db3d56",
+                                "strimzi.io/kafka-version": "4.3.1",
+                                "strimzi.io/resource-revision": "4546f0c2",
+                                "strimzi.io/revision": "894c4113",
+                                "strimzi.io/server-cert-hash": "4e25959c82c91a4682edff91f4d7c422e39c6f74"
+                            },
+                            "labels": {
+                                "app.kubernetes.io/instance": "demo",
+                                "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                                "app.kubernetes.io/name": "kafka",
+                                "app.kubernetes.io/part-of": "strimzi-demo",
+                                "strimzi.io/broker-role": "true",
+                                "strimzi.io/cluster": "demo",
+                                "strimzi.io/component-type": "kafka",
+                                "strimzi.io/controller": "strimzipodset",
+                                "strimzi.io/controller-name": "demo-b7",
+                                "strimzi.io/controller-role": "false",
+                                "strimzi.io/kind": "Kafka",
+                                "strimzi.io/name": "demo-kafka",
+                                "strimzi.io/pod-name": "demo-b7-7",
+                                "strimzi.io/pool-name": "b7"
+                            },
+                            "name": "demo-b7-7",
+                            "namespace": "kafk8s-lab"
+                        },
+                        "spec": {
+                            "affinity": {
+                                "nodeAffinity": {
+                                    "requiredDuringSchedulingIgnoredDuringExecution": {
+                                        "nodeSelectorTerms": [
+                                            {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "kubernetes.io/hostname",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "kafk8s-lab-worker2"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "automountServiceAccountToken": false,
+                            "containers": [
+                                {
+                                    "args": [
+                                        "/opt/kafka/kafka_run.sh"
+                                    ],
+                                    "env": [
+                                        {
+                                            "name": "KAFKA_JMX_EXPORTER_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "STRIMZI_KAFKA_GC_LOG_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "KAFKA_CLUSTER_NAME",
+                                            "value": "demo"
+                                        },
+                                        {
+                                            "name": "KAFKA_HEAP_OPTS",
+                                            "value": "-Xms256m -Xmx256m"
+                                        }
+                                    ],
+                                    "image": "quay.io/strimzi/kafka:1.3.0-kafka-4.3.1",
+                                    "imagePullPolicy": "IfNotPresent",
+                                    "livenessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_liveness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "name": "kafka",
+                                    "ports": [
+                                        {
+                                            "containerPort": 8443,
+                                            "name": "tcp-kafkaagent",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9091,
+                                            "name": "tcp-replication",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9092,
+                                            "name": "tcp-clients",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9093,
+                                            "name": "tcp-clientstls",
+                                            "protocol": "TCP"
+                                        }
+                                    ],
+                                    "readinessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_readiness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "resources": {
+                                        "limits": {
+                                            "memory": "640Mi"
+                                        },
+                                        "requests": {
+                                            "cpu": "100m",
+                                            "memory": "384Mi"
+                                        }
+                                    },
+                                    "volumeMounts": [
+                                        {
+                                            "mountPath": "/var/lib/kafka/data-0",
+                                            "name": "data-0"
+                                        },
+                                        {
+                                            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                            "name": "kube-api-access",
+                                            "readOnly": true
+                                        },
+                                        {
+                                            "mountPath": "/tmp",
+                                            "name": "strimzi-tmp"
+                                        },
+                                        {
+                                            "mountPath": "/opt/kafka/custom-config/",
+                                            "name": "kafka-metrics-and-logging"
+                                        },
+                                        {
+                                            "mountPath": "/var/opt/kafka",
+                                            "name": "ready-files"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "hostname": "demo-b7-7",
+                            "restartPolicy": "Always",
+                            "schedulerName": "default-scheduler",
+                            "serviceAccountName": "demo-kafka",
+                            "subdomain": "demo-kafka-brokers",
+                            "terminationGracePeriodSeconds": 30,
+                            "volumes": [
+                                {
+                                    "emptyDir": {},
+                                    "name": "data-0"
+                                },
+                                {
+                                    "name": "kube-api-access",
+                                    "projected": {
+                                        "defaultMode": 420,
+                                        "sources": [
+                                            {
+                                                "serviceAccountToken": {
+                                                    "path": "token"
+                                                }
+                                            },
+                                            {
+                                                "configMap": {
+                                                    "items": [
+                                                        {
+                                                            "key": "ca.crt",
+                                                            "path": "ca.crt"
+                                                        }
+                                                    ],
+                                                    "name": "kube-root-ca.crt"
+                                                }
+                                            },
+                                            {
+                                                "downwardAPI": {
+                                                    "items": [
+                                                        {
+                                                            "fieldRef": {
+                                                                "apiVersion": "v1",
+                                                                "fieldPath": "metadata.namespace"
+                                                            },
+                                                            "path": "namespace"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "5Mi"
+                                    },
+                                    "name": "strimzi-tmp"
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "demo-b7-7"
+                                    },
+                                    "name": "kafka-metrics-and-logging"
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "1Ki"
+                                    },
+                                    "name": "ready-files"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "selector": {
+                    "matchLabels": {
+                        "strimzi.io/cluster": "demo",
+                        "strimzi.io/kind": "Kafka",
+                        "strimzi.io/name": "demo-kafka",
+                        "strimzi.io/pool-name": "b7"
+                    }
+                }
+            },
+            "status": {
+                "currentPods": 1,
+                "observedGeneration": 1,
+                "pods": 1,
+                "readyPods": 1
+            }
+        },
+        {
+            "apiVersion": "core.strimzi.io/v1",
+            "kind": "StrimziPodSet",
+            "metadata": {
+                "annotations": {
+                    "strimzi.io/kafka-version": "4.3.1",
+                    "strimzi.io/storage": "{\"type\":\"jbod\",\"volumes\":[{\"id\":0,\"type\":\"ephemeral\",\"kraftMetadata\":\"shared\"}]}"
+                },
+                "creationTimestamp": "2026-10-14T14:19:25Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/instance": "demo",
+                    "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                    "app.kubernetes.io/name": "kafka",
+                    "app.kubernetes.io/part-of": "strimzi-demo",
+                    "strimzi.io/cluster": "demo",
+                    "strimzi.io/component-type": "kafka",
+                    "strimzi.io/kind": "Kafka",
+                    "strimzi.io/name": "demo-kafka",
+                    "strimzi.io/pool-name": "controllers"
+                },
+                "name": "demo-controllers",
+                "namespace": "kafk8s-lab",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "kafka.strimzi.io/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": false,
+                        "kind": "KafkaNodePool",
+                        "name": "controllers",
+                        "uid": "58a3bf25-d2f0-4ffc-84e5-dc4d636b650c"
+                    }
+                ],
+                "resourceVersion": "2405",
+                "uid": "7d80b00e-2eeb-463f-8854-72afd3f35683"
+            },
+            "spec": {
+                "pods": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "metadata": {
+                            "annotations": {
+                                "strimzi.io/clients-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-key-generation": "0",
+                                "strimzi.io/configuration-hash": "d01de17c",
+                                "strimzi.io/kafka-version": "4.3.1",
+                                "strimzi.io/resource-revision": "0fb30b5c",
+                                "strimzi.io/revision": "b72a9135",
+                                "strimzi.io/server-cert-hash": "35a9db81bd8efde8db7007650758ff4d5c312616"
+                            },
+                            "labels": {
+                                "app.kubernetes.io/instance": "demo",
+                                "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                                "app.kubernetes.io/name": "kafka",
+                                "app.kubernetes.io/part-of": "strimzi-demo",
+                                "strimzi.io/broker-role": "false",
+                                "strimzi.io/cluster": "demo",
+                                "strimzi.io/component-type": "kafka",
+                                "strimzi.io/controller": "strimzipodset",
+                                "strimzi.io/controller-name": "demo-controllers",
+                                "strimzi.io/controller-role": "true",
+                                "strimzi.io/kind": "Kafka",
+                                "strimzi.io/name": "demo-kafka",
+                                "strimzi.io/pod-name": "demo-controllers-0",
+                                "strimzi.io/pool-name": "controllers"
+                            },
+                            "name": "demo-controllers-0",
+                            "namespace": "kafk8s-lab"
+                        },
+                        "spec": {
+                            "affinity": {
+                                "nodeAffinity": {
+                                    "requiredDuringSchedulingIgnoredDuringExecution": {
+                                        "nodeSelectorTerms": [
+                                            {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "kubernetes.io/hostname",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "kafk8s-lab-worker4"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "automountServiceAccountToken": false,
+                            "containers": [
+                                {
+                                    "args": [
+                                        "/opt/kafka/kafka_run.sh"
+                                    ],
+                                    "env": [
+                                        {
+                                            "name": "KAFKA_JMX_EXPORTER_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "STRIMZI_KAFKA_GC_LOG_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "KAFKA_CLUSTER_NAME",
+                                            "value": "demo"
+                                        },
+                                        {
+                                            "name": "KAFKA_HEAP_OPTS",
+                                            "value": "-Xms128m -Xmx128m"
+                                        }
+                                    ],
+                                    "image": "quay.io/strimzi/kafka:1.3.0-kafka-4.3.1",
+                                    "imagePullPolicy": "IfNotPresent",
+                                    "livenessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_liveness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "name": "kafka",
+                                    "ports": [
+                                        {
+                                            "containerPort": 8443,
+                                            "name": "tcp-kafkaagent",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9090,
+                                            "name": "tcp-ctrlplane",
+                                            "protocol": "TCP"
+                                        }
+                                    ],
+                                    "readinessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_readiness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "resources": {
+                                        "limits": {
+                                            "memory": "384Mi"
+                                        },
+                                        "requests": {
+                                            "cpu": "100m",
+                                            "memory": "256Mi"
+                                        }
+                                    },
+                                    "volumeMounts": [
+                                        {
+                                            "mountPath": "/var/lib/kafka/data-0",
+                                            "name": "data-0"
+                                        },
+                                        {
+                                            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                            "name": "kube-api-access",
+                                            "readOnly": true
+                                        },
+                                        {
+                                            "mountPath": "/tmp",
+                                            "name": "strimzi-tmp"
+                                        },
+                                        {
+                                            "mountPath": "/opt/kafka/custom-config/",
+                                            "name": "kafka-metrics-and-logging"
+                                        },
+                                        {
+                                            "mountPath": "/var/opt/kafka",
+                                            "name": "ready-files"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "hostname": "demo-controllers-0",
+                            "restartPolicy": "Always",
+                            "schedulerName": "default-scheduler",
+                            "serviceAccountName": "demo-kafka",
+                            "subdomain": "demo-kafka-brokers",
+                            "terminationGracePeriodSeconds": 30,
+                            "volumes": [
+                                {
+                                    "emptyDir": {},
+                                    "name": "data-0"
+                                },
+                                {
+                                    "name": "kube-api-access",
+                                    "projected": {
+                                        "defaultMode": 420,
+                                        "sources": [
+                                            {
+                                                "serviceAccountToken": {
+                                                    "path": "token"
+                                                }
+                                            },
+                                            {
+                                                "configMap": {
+                                                    "items": [
+                                                        {
+                                                            "key": "ca.crt",
+                                                            "path": "ca.crt"
+                                                        }
+                                                    ],
+                                                    "name": "kube-root-ca.crt"
+                                                }
+                                            },
+                                            {
+                                                "downwardAPI": {
+                                                    "items": [
+                                                        {
+                                                            "fieldRef": {
+                                                                "apiVersion": "v1",
+                                                                "fieldPath": "metadata.namespace"
+                                                            },
+                                                            "path": "namespace"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "5Mi"
+                                    },
+                                    "name": "strimzi-tmp"
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "demo-controllers-0"
+                                    },
+                                    "name": "kafka-metrics-and-logging"
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "1Ki"
+                                    },
+                                    "name": "ready-files"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "metadata": {
+                            "annotations": {
+                                "strimzi.io/clients-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-key-generation": "0",
+                                "strimzi.io/configuration-hash": "a6729b75",
+                                "strimzi.io/kafka-version": "4.3.1",
+                                "strimzi.io/resource-revision": "0fb30b5c",
+                                "strimzi.io/revision": "a8f79e08",
+                                "strimzi.io/server-cert-hash": "04302f3caf3d04c154841d5c8dbca05ae5072c0a"
+                            },
+                            "labels": {
+                                "app.kubernetes.io/instance": "demo",
+                                "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                                "app.kubernetes.io/name": "kafka",
+                                "app.kubernetes.io/part-of": "strimzi-demo",
+                                "strimzi.io/broker-role": "false",
+                                "strimzi.io/cluster": "demo",
+                                "strimzi.io/component-type": "kafka",
+                                "strimzi.io/controller": "strimzipodset",
+                                "strimzi.io/controller-name": "demo-controllers",
+                                "strimzi.io/controller-role": "true",
+                                "strimzi.io/kind": "Kafka",
+                                "strimzi.io/name": "demo-kafka",
+                                "strimzi.io/pod-name": "demo-controllers-1",
+                                "strimzi.io/pool-name": "controllers"
+                            },
+                            "name": "demo-controllers-1",
+                            "namespace": "kafk8s-lab"
+                        },
+                        "spec": {
+                            "affinity": {
+                                "nodeAffinity": {
+                                    "requiredDuringSchedulingIgnoredDuringExecution": {
+                                        "nodeSelectorTerms": [
+                                            {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "kubernetes.io/hostname",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "kafk8s-lab-worker4"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "automountServiceAccountToken": false,
+                            "containers": [
+                                {
+                                    "args": [
+                                        "/opt/kafka/kafka_run.sh"
+                                    ],
+                                    "env": [
+                                        {
+                                            "name": "KAFKA_JMX_EXPORTER_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "STRIMZI_KAFKA_GC_LOG_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "KAFKA_CLUSTER_NAME",
+                                            "value": "demo"
+                                        },
+                                        {
+                                            "name": "KAFKA_HEAP_OPTS",
+                                            "value": "-Xms128m -Xmx128m"
+                                        }
+                                    ],
+                                    "image": "quay.io/strimzi/kafka:1.3.0-kafka-4.3.1",
+                                    "imagePullPolicy": "IfNotPresent",
+                                    "livenessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_liveness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "name": "kafka",
+                                    "ports": [
+                                        {
+                                            "containerPort": 8443,
+                                            "name": "tcp-kafkaagent",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9090,
+                                            "name": "tcp-ctrlplane",
+                                            "protocol": "TCP"
+                                        }
+                                    ],
+                                    "readinessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_readiness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "resources": {
+                                        "limits": {
+                                            "memory": "384Mi"
+                                        },
+                                        "requests": {
+                                            "cpu": "100m",
+                                            "memory": "256Mi"
+                                        }
+                                    },
+                                    "volumeMounts": [
+                                        {
+                                            "mountPath": "/var/lib/kafka/data-0",
+                                            "name": "data-0"
+                                        },
+                                        {
+                                            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                            "name": "kube-api-access",
+                                            "readOnly": true
+                                        },
+                                        {
+                                            "mountPath": "/tmp",
+                                            "name": "strimzi-tmp"
+                                        },
+                                        {
+                                            "mountPath": "/opt/kafka/custom-config/",
+                                            "name": "kafka-metrics-and-logging"
+                                        },
+                                        {
+                                            "mountPath": "/var/opt/kafka",
+                                            "name": "ready-files"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "hostname": "demo-controllers-1",
+                            "restartPolicy": "Always",
+                            "schedulerName": "default-scheduler",
+                            "serviceAccountName": "demo-kafka",
+                            "subdomain": "demo-kafka-brokers",
+                            "terminationGracePeriodSeconds": 30,
+                            "volumes": [
+                                {
+                                    "emptyDir": {},
+                                    "name": "data-0"
+                                },
+                                {
+                                    "name": "kube-api-access",
+                                    "projected": {
+                                        "defaultMode": 420,
+                                        "sources": [
+                                            {
+                                                "serviceAccountToken": {
+                                                    "path": "token"
+                                                }
+                                            },
+                                            {
+                                                "configMap": {
+                                                    "items": [
+                                                        {
+                                                            "key": "ca.crt",
+                                                            "path": "ca.crt"
+                                                        }
+                                                    ],
+                                                    "name": "kube-root-ca.crt"
+                                                }
+                                            },
+                                            {
+                                                "downwardAPI": {
+                                                    "items": [
+                                                        {
+                                                            "fieldRef": {
+                                                                "apiVersion": "v1",
+                                                                "fieldPath": "metadata.namespace"
+                                                            },
+                                                            "path": "namespace"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "5Mi"
+                                    },
+                                    "name": "strimzi-tmp"
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "demo-controllers-1"
+                                    },
+                                    "name": "kafka-metrics-and-logging"
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "1Ki"
+                                    },
+                                    "name": "ready-files"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "metadata": {
+                            "annotations": {
+                                "strimzi.io/clients-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-cert-generation": "0",
+                                "strimzi.io/cluster-ca-key-generation": "0",
+                                "strimzi.io/configuration-hash": "fe966cc4",
+                                "strimzi.io/kafka-version": "4.3.1",
+                                "strimzi.io/resource-revision": "0fb30b5c",
+                                "strimzi.io/revision": "16ab3b55",
+                                "strimzi.io/server-cert-hash": "edea49da74421062e8c71ff6c9221f4b3f61f544"
+                            },
+                            "labels": {
+                                "app.kubernetes.io/instance": "demo",
+                                "app.kubernetes.io/managed-by": "strimzi-cluster-operator",
+                                "app.kubernetes.io/name": "kafka",
+                                "app.kubernetes.io/part-of": "strimzi-demo",
+                                "strimzi.io/broker-role": "false",
+                                "strimzi.io/cluster": "demo",
+                                "strimzi.io/component-type": "kafka",
+                                "strimzi.io/controller": "strimzipodset",
+                                "strimzi.io/controller-name": "demo-controllers",
+                                "strimzi.io/controller-role": "true",
+                                "strimzi.io/kind": "Kafka",
+                                "strimzi.io/name": "demo-kafka",
+                                "strimzi.io/pod-name": "demo-controllers-2",
+                                "strimzi.io/pool-name": "controllers"
+                            },
+                            "name": "demo-controllers-2",
+                            "namespace": "kafk8s-lab"
+                        },
+                        "spec": {
+                            "affinity": {
+                                "nodeAffinity": {
+                                    "requiredDuringSchedulingIgnoredDuringExecution": {
+                                        "nodeSelectorTerms": [
+                                            {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "kubernetes.io/hostname",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "kafk8s-lab-worker4"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "automountServiceAccountToken": false,
+                            "containers": [
+                                {
+                                    "args": [
+                                        "/opt/kafka/kafka_run.sh"
+                                    ],
+                                    "env": [
+                                        {
+                                            "name": "KAFKA_JMX_EXPORTER_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "STRIMZI_KAFKA_GC_LOG_ENABLED",
+                                            "value": "false"
+                                        },
+                                        {
+                                            "name": "KAFKA_CLUSTER_NAME",
+                                            "value": "demo"
+                                        },
+                                        {
+                                            "name": "KAFKA_HEAP_OPTS",
+                                            "value": "-Xms128m -Xmx128m"
+                                        }
+                                    ],
+                                    "image": "quay.io/strimzi/kafka:1.3.0-kafka-4.3.1",
+                                    "imagePullPolicy": "IfNotPresent",
+                                    "livenessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_liveness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "name": "kafka",
+                                    "ports": [
+                                        {
+                                            "containerPort": 8443,
+                                            "name": "tcp-kafkaagent",
+                                            "protocol": "TCP"
+                                        },
+                                        {
+                                            "containerPort": 9090,
+                                            "name": "tcp-ctrlplane",
+                                            "protocol": "TCP"
+                                        }
+                                    ],
+                                    "readinessProbe": {
+                                        "exec": {
+                                            "command": [
+                                                "/opt/kafka/kafka_readiness.sh"
+                                            ]
+                                        },
+                                        "initialDelaySeconds": 15,
+                                        "timeoutSeconds": 5
+                                    },
+                                    "resources": {
+                                        "limits": {
+                                            "memory": "384Mi"
+                                        },
+                                        "requests": {
+                                            "cpu": "100m",
+                                            "memory": "256Mi"
+                                        }
+                                    },
+                                    "volumeMounts": [
+                                        {
+                                            "mountPath": "/var/lib/kafka/data-0",
+                                            "name": "data-0"
+                                        },
+                                        {
+                                            "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                            "name": "kube-api-access",
+                                            "readOnly": true
+                                        },
+                                        {
+                                            "mountPath": "/tmp",
+                                            "name": "strimzi-tmp"
+                                        },
+                                        {
+                                            "mountPath": "/opt/kafka/custom-config/",
+                                            "name": "kafka-metrics-and-logging"
+                                        },
+                                        {
+                                            "mountPath": "/var/opt/kafka",
+                                            "name": "ready-files"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "hostname": "demo-controllers-2",
+                            "restartPolicy": "Always",
+                            "schedulerName": "default-scheduler",
+                            "serviceAccountName": "demo-kafka",
+                            "subdomain": "demo-kafka-brokers",
+                            "terminationGracePeriodSeconds": 30,
+                            "volumes": [
+                                {
+                                    "emptyDir": {},
+                                    "name": "data-0"
+                                },
+                                {
+                                    "name": "kube-api-access",
+                                    "projected": {
+                                        "defaultMode": 420,
+                                        "sources": [
+                                            {
+                                                "serviceAccountToken": {
+                                                    "path": "token"
+                                                }
+                                            },
+                                            {
+                                                "configMap": {
+                                                    "items": [
+                                                        {
+                                                            "key": "ca.crt",
+                                                            "path": "ca.crt"
+                                                        }
+                                                    ],
+                                                    "name": "kube-root-ca.crt"
+                                                }
+                                            },
+                                            {
+                                                "downwardAPI": {
+                                                    "items": [
+                                                        {
+                                                            "fieldRef": {
+                                                                "apiVersion": "v1",
+                                                                "fieldPath": "metadata.namespace"
+                                                            },
+                                                            "path": "namespace"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "5Mi"
+                                    },
+                                    "name": "strimzi-tmp"
+                                },
+                                {
+                                    "configMap": {
+                                        "name": "demo-controllers-2"
+                                    },
+                                    "name": "kafka-metrics-and-logging"
+                                },
+                                {
+                                    "emptyDir": {
+                                        "medium": "Memory",
+                                        "sizeLimit": "1Ki"
+                                    },
+                                    "name": "ready-files"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "selector": {
+                    "matchLabels": {
+                        "strimzi.io/cluster": "demo",
+                        "strimzi.io/kind": "Kafka",
+                        "strimzi.io/name": "demo-kafka",
+                        "strimzi.io/pool-name": "controllers"
+                    }
+                }
+            },
+            "status": {
+                "currentPods": 3,
+                "observedGeneration": 1,
+                "pods": 3,
+                "readyPods": 3
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

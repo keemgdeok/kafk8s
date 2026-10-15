@@ -1,0 +1,8 @@
+{
+  "layout": "colocated",
+  "target": "kafk8s-lab-worker",
+  "stopped_at": "2026-10-14T14:39:34Z",
+  "restarted_at": "2026-10-14T14:40:40Z",
+  "kind_cluster": "kafk8s-lab",
+  "fault": "abrupt worker container stop; not pod deletion"
+}

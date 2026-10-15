@@ -1,0 +1,347 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "kafka.strimzi.io/v1",
+            "kind": "KafkaNodePool",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"kafka.strimzi.io/v1\",\"kind\":\"KafkaNodePool\",\"metadata\":{\"annotations\":{\"strimzi.io/next-node-ids\":\"[11]\"},\"labels\":{\"strimzi.io/cluster\":\"demo\"},\"name\":\"b11\",\"namespace\":\"kafk8s-lab\"},\"spec\":{\"jvmOptions\":{\"-Xms\":\"256m\",\"-Xmx\":\"256m\"},\"replicas\":1,\"resources\":{\"limits\":{\"memory\":\"640Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"384Mi\"}},\"roles\":[\"broker\"],\"storage\":{\"type\":\"jbod\",\"volumes\":[{\"id\":0,\"kraftMetadata\":\"shared\",\"type\":\"ephemeral\"}]},\"template\":{\"pod\":{\"affinity\":{\"nodeAffinity\":{\"requiredDuringSchedulingIgnoredDuringExecution\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"kubernetes.io/hostname\",\"operator\":\"In\",\"values\":[\"kafk8s-lab-worker3\"]}]}]}}}}}}}\n",
+                    "strimzi.io/next-node-ids": "[11]"
+                },
+                "creationTimestamp": "2026-10-14T14:19:10Z",
+                "generation": 1,
+                "labels": {
+                    "strimzi.io/cluster": "demo"
+                },
+                "name": "b11",
+                "namespace": "kafk8s-lab",
+                "resourceVersion": "1308",
+                "uid": "a0adac14-2040-420e-b6c7-0f2adec5a75c"
+            },
+            "spec": {
+                "jvmOptions": {
+                    "-Xms": "256m",
+                    "-Xmx": "256m"
+                },
+                "replicas": 1,
+                "resources": {
+                    "limits": {
+                        "memory": "640Mi"
+                    },
+                    "requests": {
+                        "cpu": "100m",
+                        "memory": "384Mi"
+                    }
+                },
+                "roles": [
+                    "broker"
+                ],
+                "storage": {
+                    "type": "jbod",
+                    "volumes": [
+                        {
+                            "id": 0,
+                            "kraftMetadata": "shared",
+                            "type": "ephemeral"
+                        }
+                    ]
+                },
+                "template": {
+                    "pod": {
+                        "affinity": {
+                            "nodeAffinity": {
+                                "requiredDuringSchedulingIgnoredDuringExecution": {
+                                    "nodeSelectorTerms": [
+                                        {
+                                            "matchExpressions": [
+                                                {
+                                                    "key": "kubernetes.io/hostname",
+                                                    "operator": "In",
+                                                    "values": [
+                                                        "kafk8s-lab-worker3"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "status": {
+                "clusterId": "AdlaAIi4SOeoTuDIREapow",
+                "conditions": [],
+                "labelSelector": "strimzi.io/cluster=demo,strimzi.io/name=demo-kafka,strimzi.io/kind=Kafka,strimzi.io/pool-name=b11",
+                "nodeIds": [
+                    11
+                ],
+                "observedGeneration": 1,
+                "replicas": 1,
+                "roles": [
+                    "broker"
+                ]
+            }
+        },
+        {
+            "apiVersion": "kafka.strimzi.io/v1",
+            "kind": "KafkaNodePool",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"kafka.strimzi.io/v1\",\"kind\":\"KafkaNodePool\",\"metadata\":{\"annotations\":{\"strimzi.io/next-node-ids\":\"[3]\"},\"labels\":{\"strimzi.io/cluster\":\"demo\"},\"name\":\"b3\",\"namespace\":\"kafk8s-lab\"},\"spec\":{\"jvmOptions\":{\"-Xms\":\"256m\",\"-Xmx\":\"256m\"},\"replicas\":1,\"resources\":{\"limits\":{\"memory\":\"640Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"384Mi\"}},\"roles\":[\"broker\"],\"storage\":{\"type\":\"jbod\",\"volumes\":[{\"id\":0,\"kraftMetadata\":\"shared\",\"type\":\"ephemeral\"}]},\"template\":{\"pod\":{\"affinity\":{\"nodeAffinity\":{\"requiredDuringSchedulingIgnoredDuringExecution\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"kubernetes.io/hostname\",\"operator\":\"In\",\"values\":[\"kafk8s-lab-worker\"]}]}]}}}}}}}\n",
+                    "strimzi.io/next-node-ids": "[3]"
+                },
+                "creationTimestamp": "2026-10-14T14:19:10Z",
+                "generation": 1,
+                "labels": {
+                    "strimzi.io/cluster": "demo"
+                },
+                "name": "b3",
+                "namespace": "kafk8s-lab",
+                "resourceVersion": "1310",
+                "uid": "a6738850-8601-4555-8d56-61b3763bf97a"
+            },
+            "spec": {
+                "jvmOptions": {
+                    "-Xms": "256m",
+                    "-Xmx": "256m"
+                },
+                "replicas": 1,
+                "resources": {
+                    "limits": {
+                        "memory": "640Mi"
+                    },
+                    "requests": {
+                        "cpu": "100m",
+                        "memory": "384Mi"
+                    }
+                },
+                "roles": [
+                    "broker"
+                ],
+                "storage": {
+                    "type": "jbod",
+                    "volumes": [
+                        {
+                            "id": 0,
+                            "kraftMetadata": "shared",
+                            "type": "ephemeral"
+                        }
+                    ]
+                },
+                "template": {
+                    "pod": {
+                        "affinity": {
+                            "nodeAffinity": {
+                                "requiredDuringSchedulingIgnoredDuringExecution": {
+                                    "nodeSelectorTerms": [
+                                        {
+                                            "matchExpressions": [
+                                                {
+                                                    "key": "kubernetes.io/hostname",
+                                                    "operator": "In",
+                                                    "values": [
+                                                        "kafk8s-lab-worker"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "status": {
+                "clusterId": "AdlaAIi4SOeoTuDIREapow",
+                "conditions": [],
+                "labelSelector": "strimzi.io/cluster=demo,strimzi.io/name=demo-kafka,strimzi.io/kind=Kafka,strimzi.io/pool-name=b3",
+                "nodeIds": [
+                    3
+                ],
+                "observedGeneration": 1,
+                "replicas": 1,
+                "roles": [
+                    "broker"
+                ]
+            }
+        },
+        {
+            "apiVersion": "kafka.strimzi.io/v1",
+            "kind": "KafkaNodePool",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"kafka.strimzi.io/v1\",\"kind\":\"KafkaNodePool\",\"metadata\":{\"annotations\":{\"strimzi.io/next-node-ids\":\"[7]\"},\"labels\":{\"strimzi.io/cluster\":\"demo\"},\"name\":\"b7\",\"namespace\":\"kafk8s-lab\"},\"spec\":{\"jvmOptions\":{\"-Xms\":\"256m\",\"-Xmx\":\"256m\"},\"replicas\":1,\"resources\":{\"limits\":{\"memory\":\"640Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"384Mi\"}},\"roles\":[\"broker\"],\"storage\":{\"type\":\"jbod\",\"volumes\":[{\"id\":0,\"kraftMetadata\":\"shared\",\"type\":\"ephemeral\"}]},\"template\":{\"pod\":{\"affinity\":{\"nodeAffinity\":{\"requiredDuringSchedulingIgnoredDuringExecution\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"kubernetes.io/hostname\",\"operator\":\"In\",\"values\":[\"kafk8s-lab-worker2\"]}]}]}}}}}}}\n",
+                    "strimzi.io/next-node-ids": "[7]"
+                },
+                "creationTimestamp": "2026-10-14T14:19:10Z",
+                "generation": 1,
+                "labels": {
+                    "strimzi.io/cluster": "demo"
+                },
+                "name": "b7",
+                "namespace": "kafk8s-lab",
+                "resourceVersion": "1311",
+                "uid": "323296a9-c30a-4ca0-b746-217b7db158f4"
+            },
+            "spec": {
+                "jvmOptions": {
+                    "-Xms": "256m",
+                    "-Xmx": "256m"
+                },
+                "replicas": 1,
+                "resources": {
+                    "limits": {
+                        "memory": "640Mi"
+                    },
+                    "requests": {
+                        "cpu": "100m",
+                        "memory": "384Mi"
+                    }
+                },
+                "roles": [
+                    "broker"
+                ],
+                "storage": {
+                    "type": "jbod",
+                    "volumes": [
+                        {
+                            "id": 0,
+                            "kraftMetadata": "shared",
+                            "type": "ephemeral"
+                        }
+                    ]
+                },
+                "template": {
+                    "pod": {
+                        "affinity": {
+                            "nodeAffinity": {
+                                "requiredDuringSchedulingIgnoredDuringExecution": {
+                                    "nodeSelectorTerms": [
+                                        {
+                                            "matchExpressions": [
+                                                {
+                                                    "key": "kubernetes.io/hostname",
+                                                    "operator": "In",
+                                                    "values": [
+                                                        "kafk8s-lab-worker2"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "status": {
+                "clusterId": "AdlaAIi4SOeoTuDIREapow",
+                "conditions": [],
+                "labelSelector": "strimzi.io/cluster=demo,strimzi.io/name=demo-kafka,strimzi.io/kind=Kafka,strimzi.io/pool-name=b7",
+                "nodeIds": [
+                    7
+                ],
+                "observedGeneration": 1,
+                "replicas": 1,
+                "roles": [
+                    "broker"
+                ]
+            }
+        },
+        {
+            "apiVersion": "kafka.strimzi.io/v1",
+            "kind": "KafkaNodePool",
+            "metadata": {
+                "annotations": {
+                    "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"kafka.strimzi.io/v1\",\"kind\":\"KafkaNodePool\",\"metadata\":{\"annotations\":{\"strimzi.io/next-node-ids\":\"[0-2]\"},\"labels\":{\"strimzi.io/cluster\":\"demo\"},\"name\":\"controllers\",\"namespace\":\"kafk8s-lab\"},\"spec\":{\"jvmOptions\":{\"-Xms\":\"128m\",\"-Xmx\":\"128m\"},\"replicas\":3,\"resources\":{\"limits\":{\"memory\":\"384Mi\"},\"requests\":{\"cpu\":\"100m\",\"memory\":\"256Mi\"}},\"roles\":[\"controller\"],\"storage\":{\"type\":\"jbod\",\"volumes\":[{\"id\":0,\"kraftMetadata\":\"shared\",\"type\":\"ephemeral\"}]},\"template\":{\"pod\":{\"affinity\":{\"nodeAffinity\":{\"requiredDuringSchedulingIgnoredDuringExecution\":{\"nodeSelectorTerms\":[{\"matchExpressions\":[{\"key\":\"kubernetes.io/hostname\",\"operator\":\"In\",\"values\":[\"kafk8s-lab-worker4\"]}]}]}}}}}}}\n",
+                    "strimzi.io/next-node-ids": "[0-2]"
+                },
+                "creationTimestamp": "2026-10-14T14:19:10Z",
+                "generation": 1,
+                "labels": {
+                    "strimzi.io/cluster": "demo"
+                },
+                "name": "controllers",
+                "namespace": "kafk8s-lab",
+                "resourceVersion": "1312",
+                "uid": "58a3bf25-d2f0-4ffc-84e5-dc4d636b650c"
+            },
+            "spec": {
+                "jvmOptions": {
+                    "-Xms": "128m",
+                    "-Xmx": "128m"
+                },
+                "replicas": 3,
+                "resources": {
+                    "limits": {
+                        "memory": "384Mi"
+                    },
+                    "requests": {
+                        "cpu": "100m",
+                        "memory": "256Mi"
+                    }
+                },
+                "roles": [
+                    "controller"
+                ],
+                "storage": {
+                    "type": "jbod",
+                    "volumes": [
+                        {
+                            "id": 0,
+                            "kraftMetadata": "shared",
+                            "type": "ephemeral"
+                        }
+                    ]
+                },
+                "template": {
+                    "pod": {
+                        "affinity": {
+                            "nodeAffinity": {
+                                "requiredDuringSchedulingIgnoredDuringExecution": {
+                                    "nodeSelectorTerms": [
+                                        {
+                                            "matchExpressions": [
+                                                {
+                                                    "key": "kubernetes.io/hostname",
+                                                    "operator": "In",
+                                                    "values": [
+                                                        "kafk8s-lab-worker4"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "status": {
+                "clusterId": "AdlaAIi4SOeoTuDIREapow",
+                "conditions": [],
+                "labelSelector": "strimzi.io/cluster=demo,strimzi.io/name=demo-kafka,strimzi.io/kind=Kafka,strimzi.io/pool-name=controllers",
+                "nodeIds": [
+                    0,
+                    1,
+                    2
+                ],
+                "observedGeneration": 1,
+                "replicas": 3,
+                "roles": [
+                    "controller"
+                ]
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}
