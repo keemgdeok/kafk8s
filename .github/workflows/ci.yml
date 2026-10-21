@@ -12,5 +12,8 @@ jobs:
           distribution: temurin
           java-version: '21'
       - run: ./gradlew --no-daemon test installDist labBundle
-      - run: bash -n lab/*.sh
+      - run: |
+          for script in lab/*.sh; do
+            bash -n "$script" || exit
+          done
       - run: build/install/kafk8s/bin/kafk8s --help && build/install/kafk8s/bin/kafk8s --version
