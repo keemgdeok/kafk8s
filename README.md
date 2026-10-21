@@ -4,7 +4,7 @@ A read-only Java CLI that maps Kafka replicas and ISR members to Kubernetes
 nodes and checks for min-ISR shortfalls under a single-node-loss scenario.
 
 Experimental. Currently limited to Strimzi 1.3.0 and Kafka 4.3.1 (KRaft);
-see the [supported profile](docs/LIMITATIONS.md).
+see the [supported profile](docs/LAB.md#supported-profile).
 
 ## Build and run
 
@@ -57,5 +57,4 @@ results, not production validation.
 [Verification](docs/CASE_STUDY.md#verification): 43 unit/request tests and 14 actual CLI
 checks, including mTLS and permission failures. External validation is limited.
 
-- [Reproduce the lab](docs/LAB.md)
-- [Permissions and limitations](docs/LIMITATIONS.md)
+- [Lab setup and permissions](docs/LAB.md)

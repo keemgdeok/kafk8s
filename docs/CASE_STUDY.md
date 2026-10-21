@@ -74,5 +74,5 @@ race) were inconclusive. An initial CLI fixture pass also had an incorrect
 authorization expectation. None are counted as completed verification; only
 the completed fault runs and final CLI verification are kept as reference data.
 
-See [permissions and limitations](LIMITATIONS.md) for the supported profile
-and evidence requirements.
+See the [lab guide](LAB.md#supported-profile) for the supported profile,
+required permissions and collection limits.

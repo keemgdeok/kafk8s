@@ -76,3 +76,43 @@ in the spread layout. Results and exit codes are saved under `lab/runtime/eviden
 No automated broad cleanup is provided. Preserve any needed evidence and stop
 only this lab's explicitly identified containers when finished; never use
 `docker system prune` or delete other Kubernetes contexts.
+
+## Supported profile
+
+Strimzi 1.3.0, Kafka 4.3.1, separate broker/controller pools, `metadata.version=30`
+and `eligible.leader.replicas.version=1`. Combined roles, other operators/cloud
+distributions and mixed-version upgrades are unsupported.
+
+Live-cluster tests used Linux ARM64 JVMs in Docker/kind on macOS ARM64.
+Unit/request tests and CLI startup also passed on native macOS Java 21 and
+in Linux CI; this does not certify all platform/version combinations.
+
+## Required permissions
+
+Kubernetes: selected namespace get/list on Kafka, KafkaNodePool, Pod and
+StrimziPodSet. See [reader role](../lab/reader.yaml). No Secret, Node, watch,
+exec/logs or write permission is required by the CLI.
+
+Kafka: the tested fixture grants cluster Describe and selected-topic
+Describe/DescribeConfigs. Inherited min ISR also requires DescribeConfigs on
+the relevant broker configurations. No data Read/Write, Create/Delete,
+Alter/AlterConfigs or consumer-group permissions are required. The fixture
+is not a proof that every granted permission is necessary for every API version.
+
+Lab administration needs broader permissions to provision credentials and
+induce faults; those permissions are not given to the inspector.
+
+## Collection limits
+
+- Broker identity uses cluster IDs, node-pool status, Pod labels, owner UIDs and
+  actual `spec.nodeName`, not pod ordinals. Observation changes are checked
+  across two collections, not an atomic Kafka/Kubernetes snapshot.
+- Explicit topic min ISR overrides are read directly. Inherited defaults must
+  agree across the relevant brokers; unavailable or divergent values produce
+  `UNKNOWN`, not an assumed default. See [Kafka topic configuration](https://kafka.apache.org/43/configuration/topic-configs/).
+- Incomplete evidence returns `UNKNOWN` where possible. Authentication,
+  required resource access and cluster identity errors stop the command.
+- TLS verification cannot be disabled. Credentials and raw client properties
+  are not included in reports.
+- Collection shares one deadline. JVM startup, cleanup and external kubeconfig
+  authentication plugins can add time beyond that budget.
