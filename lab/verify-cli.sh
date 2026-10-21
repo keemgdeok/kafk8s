@@ -3,7 +3,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 export KUBECONFIG="$PWD/lab/runtime/kubeconfig"
 test "$(kubectl config current-context)" = kind-kafk8s-lab
-out="docs/evidence/$(date -u +%Y%m%dT%H%M%SZ)-cli"
+out="lab/runtime/evidence/$(date -u +%Y%m%dT%H%M%SZ)-cli"
 mkdir -p "$out"
 printf '%s\n' "$out" > lab/runtime/latest-cli-evidence
 admin() { kubectl -n kafk8s-lab exec demo-b11-11 -- "$@"; }

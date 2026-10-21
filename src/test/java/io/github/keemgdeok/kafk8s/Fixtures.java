@@ -14,7 +14,7 @@ final class Fixtures {
     private Fixtures() {}
 
     static JsonObject json(String run, String file) throws IOException {
-        return JsonParser.parseString(Files.readString(Path.of("docs/evidence", run, file))).getAsJsonObject();
+        return JsonParser.parseString(Files.readString(Path.of("lab/evidence", run, file))).getAsJsonObject();
     }
 
     static List<JsonObject> objects(JsonObject list) {

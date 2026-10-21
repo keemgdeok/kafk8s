@@ -23,7 +23,7 @@ echo "$baseline" | jq -e '.min_isr == "2" and (.partitions | length) == 3 and al
 on_target=$(echo "$pods" | jq --arg target "$target" '[.items[] | select(.spec.nodeName == $target and .metadata.labels["strimzi.io/broker-role"] == "true")] | length')
 if [[ "$layout" == spread ]]; then test "$on_target" = 1; else test "$on_target" = 2; fi
 run="$(date -u +%Y%m%dT%H%M%SZ)-$layout"
-out="docs/evidence/$run"
+out="lab/runtime/evidence/$run"
 mkdir -p "$out"
 echo "$baseline" > "$out/before-metadata.jsonl"
 snapshot() {

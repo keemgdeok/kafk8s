@@ -25,8 +25,9 @@
 - Request collection has one shared deadline. Process/JVM startup and cleanup
   add overhead; kubeconfig external authentication plugins have their own
   behavior and are not independently certified by this prototype.
-- Tested on Linux ARM64 JVMs inside Docker/kind on macOS ARM64, not a native
-  macOS JDK or all platform/version combinations. No public release is implied.
+- Live-cluster tests used Linux ARM64 JVMs in Docker/kind on macOS ARM64.
+  Unit/request tests and CLI startup also passed on native macOS Java 21 and
+  in Linux CI; this does not certify all platform/version combinations.
 
 ## Permission profile
 

@@ -1,2 +1,0 @@
-[kafka-admin-client-thread | kafk8s-inspector] WARN org.apache.kafka.clients.NetworkClient - [AdminClient clientId=kafk8s-inspector] Connection to node -1 (/127.0.0.1:1) could not be established. Node may not be available.
-command terminated with exit code 2

@@ -54,7 +54,7 @@ completed run per layout.
 The spread run still had one producer timeout. These are single-host lab
 results, not production validation.
 
-[Verification](docs/VERIFICATION.md): 43 unit/request tests and 14 actual CLI
+[Verification](docs/CASE_STUDY.md#verification): 43 unit/request tests and 14 actual CLI
 checks, including mTLS and permission failures. External validation is limited.
 
 - [Reproduce the lab](docs/LAB.md)
